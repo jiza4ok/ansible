@@ -1,0 +1,7 @@
+---
+- name: creating a empty file /ets/iaac with rights 0500, indempotent
+  copy:
+    dest: /etc/iaac
+    content: ''
+    force: yes
+    mode: '0500'

@@ -1,0 +1,8 @@
+---
+- name: defining content of /etc/iaac as variable
+  slurp:
+    src: /etc/issue
+  register: file_content
+  
+#  shell: cat /etc/issue
+#  register: file_content2

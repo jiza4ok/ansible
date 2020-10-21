@@ -1,0 +1,21 @@
+---
+- hosts: iaas
+  tasks:
+    - name: include role create_file
+      include_role:
+        name: create_file
+        
+- hosts: all
+  tasks:
+    - name: include role store_variable
+      include_role:
+        name: store_variable
+        
+    - name: show content of the stored variable
+      debug:
+        msg: "hostname: {{ inventory_hostname }} variable: '{{ file_content['content'] | b64decode }}'"
+        
+        
+#    - name: show content of the stored variable
+#      debug:
+#        msg: "hostname: {{ inventory_hostname }} variable: '{{ file_content2['stdout_lines'] }}'"

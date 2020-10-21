@@ -1,0 +1,12 @@
+[group1]
+192.168.252.5 ansible_user=root
+
+[group2]
+192.168.252.6 ansible_user=root
+
+[group3]
+192.168.252.7 ansible_user=root
+
+[iaas:children]
+group1
+group2
